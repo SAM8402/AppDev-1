@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Student</title>
+  </head>
+  <body>
+    <form action="/student/create" method="POST" id="create-form">
+      <div>
+        <label>Roll Number:</label>
+        <input type="text" name="r_no" required />
+      </div>
+      <br/>
+      <div>
+        <label>First Name:</label>
+        <input type="text" name="f_name" required />
+      </div>
+      <br/>
+      <div>
+        <label>Last Name:</label>
+        <input type="text" name="l_name" />
+      </div>
+      <br/>
+      <div>
+        <label>Select Courses: </label>
+        {% for course in courses %}
+        <input type="checkbox" name="courses" value="{{course.course_id}}"  id="course_1" />
+        <label id="course_1">{{course.course_name}} </label>
+        {% endfor %}
+      </div>
+      <br/>
+      <div>
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+  </body>
+</html>
